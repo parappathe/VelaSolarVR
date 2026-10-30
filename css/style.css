@@ -1,0 +1,35 @@
+html, body { margin: 0; height: 100%; overflow: hidden; background: #020308; font-family: system-ui, sans-serif; }
+#app canvas { display: block; touch-action: none; }
+#vr {
+  position: fixed; right: 18px; bottom: 18px;
+  padding: 12px 24px; font-size: 17px; font-weight: 700;
+  color: #2a1a04; background: #ffc864; border: 0; border-radius: 12px; cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+}
+#vr:disabled { background: #252a5e; color: #dfe3ff; cursor: default; }
+#hud {
+  display: none; position: fixed; left: 16px; top: 14px; max-width: min(520px, calc(100vw - 32px));
+  color: #eef0ff; font: 16px/1.5 system-ui, sans-serif; pointer-events: none;
+  background: rgba(10,12,34,0.78); padding: 8px 14px; border-radius: 10px; border: 1px solid #3a4290;
+}
+#hud b { color: #ffc864; }
+#hud em { color: #b9c1f0; font-size: 14px; font-style: normal; }
+#hud .bar { display: inline-block; width: 120px; height: 8px; background: #1b1f48; border-radius: 4px; vertical-align: middle; margin-left: 6px; overflow: hidden; }
+#hud .bar i { display: block; height: 100%; background: linear-gradient(90deg, #ffb050, #fff1b0); }
+#hud .warn { color: #ff9a8a; font-weight: 700; }
+#msg {
+  display: none; position: fixed; left: 50%; top: 20%; transform: translateX(-50%); max-width: calc(100vw - 32px);
+  font: 700 22px/1.35 system-ui, sans-serif; text-align: center; pointer-events: none;
+  background: rgba(10,12,34,0.7); padding: 8px 16px; border-radius: 10px; text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+#hint {
+  position: fixed; left: 16px; bottom: 18px; right: 300px; color: #eef0ff; font: 14px/1.5 system-ui, sans-serif;
+  pointer-events: none;
+}
+#hint span { display: inline-block; background: rgba(10,12,34,0.75); padding: 6px 10px; border-radius: 8px; }
+#hint:empty { display: none; }
+#fps {
+  display: none; position: fixed; right: 16px; top: 14px; color: #ffdf6e; font: bold 15px monospace;
+  background: rgba(0,0,0,0.6); padding: 4px 8px; border-radius: 6px; pointer-events: none;
+}
+@media (max-width: 640px) { #hint { right: 16px; bottom: 76px; } #msg { font-size: 17px; top: 30%; } }
